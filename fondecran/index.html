@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fond d'écran dynamique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* 🌧 Styles pour l'animation de pluie */
+    #rain-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 15;
+}
+
+.raindrop {
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      background: linear-gradient(to bottom, rgba(173,216,230,0.8), rgba(0,0,255,0.2));
+      opacity: 0.9;
+      border-radius: 1px;
+      transform: translateX(0);
+      transition: transform 1.2s linear, top 1.2s linear, opacity 1.2s linear;
+      z-index: 16;
+}
+  </style>
+</head>
+<body>
+  <div id="sky">
+    <!-- 🖼 Fonds dynamiques -->
+    <img id="backgroundA" src="assets/nuit.jpg" alt="Fond A">
+    <img id="backgroundB" src="assets/nuit.jpg" alt="Fond B">
+
+    <!-- ☀ Soleil + halo -->
+    <div id="sun-wrapper">
+      <img id="sun" src="assets/sun.png" alt="Soleil">
+      <div class="sun-halo"></div>
+    </div>
+
+    <!-- 🌙 Lune + halo -->
+    <div id="moon-wrapper">
+      <img id="moon" src="assets/moon.png" alt="Lune">
+      <div class="moon-halo"></div>
+    </div>
+
+    <!-- 🕒 Horloge + vent + météo -->
+    <div id="top-info">
+      <div id="city-name">--</div>
+      <div id="clock">00:00:00</div>
+
+      <!-- 💨 Vent -->
+      <div id="wind-info">
+        <img src="assets/icons/arrow.png" id="wind-arrow" alt="Direction du vent">
+        <span id="wind-text">--</span>
+      </div>
+
+      <!-- 🌡 Météo -->
+      <div id="weather-block">
+        <img id="weather-icon" src="assets/weather/default.png" alt="Météo">
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <div id="temperature">--</div>
+        </div>
+      </div>
+
+      <!-- 🔄 Rafraîchissement -->
+      <button id="refresh-weather" title="Rafraîchir la météo">🔄</button>
+
+      <!-- 📶 Vitesse réseau -->
+      <div id="network-speed">Chargement...</div>
+    </div>
+
+    <!-- 🌧 Pluie -->
+    <div id="rain-container"></div>
+  </div>
+
+  <!-- 📦 Librairie solaire -->
+  <script src="suncalc.min.js"></script>
+  <script src="lastnetworkspeed.js"></script>
+
+  <!-- 🧠 Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

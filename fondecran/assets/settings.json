@@ -1,0 +1,33 @@
+{
+  "darkMode": false,
+  "changeLockScreen": false,
+  "enableShuffle": false,
+  "lastShuffleDate": null,
+  "locationMode": 0,
+  "location": "Niamey",
+  "latitude": 13.524834,
+  "longitude": 2.109823,
+  "sunriseTime": null,
+  "sunsetTime": null,
+  "sunriseSunsetDuration": 0,
+  "activeThemes": [
+    "Monterey_Abstract"
+  ],
+  "appearanceMode": 0,
+  "lockScreenDisplayIndex": -1,
+  "lockScreenTheme": null,
+  "themeShuffleMode": 2,
+  "lastShuffleTime": "09/27/2025 18:09:39",
+  "shuffleHistory": [
+    "Monterey_Abstract"
+  ],
+  "favoriteThemes": null,
+  "showInstalledOnly": false,
+  "language": "fr",
+  "autoUpdateCheck": true,
+  "lastUpdateCheckTime": null,
+  "hideTrayIcon": false,
+  "fullScreenPause": false,
+  "enableScripts": false,
+  "debugLogging": false
+}
