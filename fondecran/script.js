@@ -1,4 +1,4 @@
-const API_KEY = "e208428afbb13f5bf9fe1e92e5cb418c";
+const API_KEY = "Mettez votre clé api ici : En raison de restriction de sécurité vous devez créer votre propre clé api sur Openweathermap que vous copierez à cet endroit. L'inscription est gratuite mais notez bien que votre clé api sera bloquée si plus de 60 personnes utilisent cette clé par minute";
 let currentWeatherCode = "default";
 let cachedLat = null;
 let cachedLon = null;
@@ -10,7 +10,7 @@ let lastSuccessfulFetchAt = 0;
 let weatherRetryTimer = null;
 let rainState = { active: true, drops: [], poolInterval: null };
 
-// 📍 Coordonnées fixes (Niamey)
+// 📍 Coordonnées fixes (Ici Niamey)
 function getCoords(callback) {
   callback(13.5, 2.1);
 }
@@ -448,3 +448,4 @@ window.addEventListener('online', () => {
     scheduleWeatherUpdates(cachedLat, cachedLon);
   }
 });
+
