@@ -17,9 +17,7 @@
       pointer-events: none;
       overflow: hidden;
       z-index: 15;
-    }
-
-    .raindrop {
+    }.raindrop {
       position: absolute;
       width: 2px;
       height: 20px;
@@ -29,6 +27,17 @@
       transform: translateX(0);
       transition: transform 1.2s linear, top 1.2s linear, opacity 1.2s linear;
       z-index: 16;
+    }
+
+    /* 🚀 AJOUT: Style pour le conteneur des heures solaires */
+    #sun-times {
+      font-size: 0.8em;
+      color: rgba(255,255,255,0.8);
+      margin-top: 10px;
+      padding: 5px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 5px;
+      text-align: center;
     }
   </style>
 </head>
@@ -41,13 +50,15 @@
     <!-- ☀ Soleil + halo -->
     <div id="sun-wrapper">
       <img id="sun" src="assets/sun.png" alt="Soleil">
-      <div class="sun-halo"></div>
+      <!-- 🚀 AJOUT: ID pour le halo du soleil -->
+      <div id="sunHalo" class="sun-halo"></div>
     </div>
 
     <!-- 🌙 Lune + halo -->
     <div id="moon-wrapper">
       <img id="moon" src="assets/moon.png" alt="Lune">
-      <div class="moon-halo"></div>
+      <!-- 🚀 AJOUT: ID pour le halo de la lune -->
+      <div id="moonHalo" class="moon-halo"></div>
     </div>
 
     <!-- 🕒 Horloge + vent + météo -->
@@ -75,13 +86,18 @@
           <div id="temperature">--</div>
         </div>
       </div>
-
-      <!-- 🔄 Rafraîchissement -->
-      <button id="refresh-weather" title="Rafraîchir la météo">🔄</button>
-
       <!-- 📶 Vitesse réseau -->
       <div id="network-speed">-- Ko/s</div>
-      <div id="exchangeRates">Chargement...</div>
+      <div id="exchangeRates">--</div>
+            <div id="systemSimple" aria-live="polite" role="status">
+  <div id="cpuText">Utilisation du CPU : — %</div>
+  <div id="ramText">Utilisation de la RAM : — / —</div>
+
+      <!-- 🚀 AJOUT: Conteneur pour les heures de lever/coucher du soleil -->
+      <div id="sun-times">
+        Lever du soleil: <span id="sunrise-display">--</span><br>
+        Coucher du soleil: <span id="sunset-display">--</span>
+      </div>
     </div>
 
     <!-- 🌧 Pluie -->
@@ -92,13 +108,14 @@
      <div id="rain-container"></div>
 
   <!-- 📦 Librairie solaire -->
+  <script src="script.js"></script>
   <script src="suncalc.min.js"></script>
   <script src="lastnetworkspeed.js"></script>
   <script src="exchangerate.js"></script>
+  <script src="ramcpu.js"></script>
   <script src="battery.js"></script>
 
   <!-- 🧠 Scripts -->
-  <script src="script.js"></script>
   <script src="meteo.js"></script>
   <script src="astro-toggle.js"></script>
   <script src="fog.js"> </script> <!-- 🌫️ Script brouillard -->

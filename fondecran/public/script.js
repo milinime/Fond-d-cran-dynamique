@@ -219,7 +219,7 @@ function scheduleWeatherUpdates(lat, lon) {
         }
 
         // prochaine mise à jour normale dans 1 heure
-        weatherRetryTimer = setTimeout(tryUpdate, 60 * 60 * 1000);
+        weatherRetryTimer = setTimeout(tryUpdate, 100 * 60 * 1000);
       })
       .catch(err => {
         console.warn("Weather fetch failed:", err);

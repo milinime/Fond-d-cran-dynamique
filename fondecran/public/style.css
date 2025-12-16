@@ -255,3 +255,24 @@ html, body {
   z-index: -1;
   pointer-events: none;
 }
+#systemSimple {
+  font-family: "Segoe UI";
+  color: #ffffff;
+  background: transparent;
+  padding: 6px 0;
+  border-radius: 4px;
+  max-width: 420px;
+}
+#cpuText, #ramText {
+  font-weight: 500;
+  font-size: 0.6em;
+  margin: 4px 0;
+}
+#statusStamp { color: #ffffff; font-size: 12px; }
+.muted { color:#ffffff; font-weight:500; font-size:13px; }
+
+#sunrise-display, #sunset-display {
+  font-weight: 500;
+  font-size: 0.9em;
+  margin: 4px 0;
+}
